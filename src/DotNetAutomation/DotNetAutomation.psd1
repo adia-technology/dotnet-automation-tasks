@@ -4,7 +4,7 @@
 RootModule = './DotNetAutomation.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.2'
+ModuleVersion = '0.0.3'
 
 # ID used to uniquely identify this module
 GUID = 'b098cffb-bb67-47c8-9578-71db144c7c78'
@@ -58,7 +58,7 @@ PrivateData = @{
         ProjectUri = 'https://github.com/adia-technology/dotnet-automation-tasks'
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'Initial pre-release'
+        ReleaseNotes = 'Verifying automatic publishing via GitHub actions. No functional changes.'
 
     } # End of PSData hashtable
 

@@ -1,0 +1,16 @@
+name: Publish Powershell module
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Publish package
+      env:
+        nugetApiKey: ${{ secrets.PSGALLERY_API_KEY }}
+      run: Publish-Module -Path ./src/DotNetAutomation -NuGetApiKey $env:nugetApiKey
+      shell: pwsh
