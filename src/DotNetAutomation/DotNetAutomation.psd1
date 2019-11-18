@@ -4,7 +4,7 @@
 RootModule = './DotNetAutomation.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.4'
+ModuleVersion = '0.0.5'
 
 # ID used to uniquely identify this module
 GUID = 'b098cffb-bb67-47c8-9578-71db144c7c78'

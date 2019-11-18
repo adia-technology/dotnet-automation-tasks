@@ -20,7 +20,7 @@ function New-DeploymentPackage
 
         $resolvedDestinationPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($destinationPath)
         Write-Host "Compressing contents of $tempDirectory to $resolvedDestinationPath..."
-        Compress-Archive -Path "$tempDirectory\PackageTmp\*" -DestinationPath (Resolve-Path $resolvedDestinationPath) -Force
+        Compress-Archive -Path "$tempDirectory\PackageTmp\*" -DestinationPath $resolvedDestinationPath -Force
         Write-Host "Done. Applicaton package saved in $resolvedDestinationPath."
     }
     catch
