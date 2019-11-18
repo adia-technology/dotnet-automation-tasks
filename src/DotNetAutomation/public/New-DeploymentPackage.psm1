@@ -18,7 +18,7 @@ function New-DeploymentPackage
         $msbuildPath = Find-MsBuild
         & $msbuildPath (Resolve-Path $project) "/p:DeployOnBuild=True;Configuration=Release;DeployTarget=PipelinePreDeployCopyAllFilesToOneFolder;PackageTempRootDir=$tempDirectory"
 
-        $resolvedDestinationPath = Resolve-Path $destinationPath
+        $resolvedDestinationPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($destinationPath)
         Write-Host "Compressing contents of $tempDirectory to $resolvedDestinationPath..."
         Compress-Archive -Path "$tempDirectory\PackageTmp\*" -DestinationPath (Resolve-Path $resolvedDestinationPath) -Force
         Write-Host "Done. Applicaton package saved in $resolvedDestinationPath."
